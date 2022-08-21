@@ -1,4 +1,6 @@
 ---
+import { Title } from "./Title";
+
 export interface Props {
 	title: string;
 	body: string;
@@ -10,10 +12,7 @@ const { href, title, body } = Astro.props as Props;
 
 <li class="link-card">
 	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
+		<Title title={title} />
 		<p>
 			{body}
 		</p>
@@ -67,6 +66,10 @@ const { href, title, body } = Astro.props as Props;
 
 	.link-card:is(:hover, :focus-within) h2 {
 		color: #4f39fa;
+	}
+
+	:global(body){
+		margin: 20px
 	}
 
 	.link-card:is(:hover, :focus-within) h2 span {

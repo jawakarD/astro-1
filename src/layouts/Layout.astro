@@ -4,6 +4,7 @@ export interface Props {
 }
 
 const { title } = Astro.props as Props;
+import "../index.scss";
 ---
 
 <!DOCTYPE html>
@@ -37,9 +38,7 @@ const { title } = Astro.props as Props;
 		background-color: var(--color-bg);
 	}
 
-	body {
-		margin: 0;
-	}
+
 
 	:global(h1) {
 		font-size: var(--font-size-xl);
